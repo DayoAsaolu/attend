@@ -1,0 +1,46 @@
+version: '3'
+services:
+  frontend:
+    image: react-frt
+    build:
+      context: .
+      dockerfile: Dockerfile.front
+    container_name: attend-front2
+    volumes:
+      - ./attend_front/src:/app/src
+    # networks:
+    #   - local_net
+    depends_on:
+      - api
+      - db
+    ports:
+      - "3000:3000"
+  backend:
+    image: node-server
+    build:
+      context: .
+      dockerfile: Dockerfile.back
+    container_name: attend-back
+    volumes:
+      - ./attend_backend:/app
+    # networks:
+    #   - local_net
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+  db:
+    container_name: attend_db
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=wddtWmxCwlR0WUlV
+      - MONGO_INITDB_DATABASE=testing
+    # networks:
+    #   - local_net
+    ports:
+      - "27017:27017"
+    restart: always
+# networks:
+#   local_net:
+#     driver: bridge

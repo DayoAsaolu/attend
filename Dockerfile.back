@@ -1,0 +1,11 @@
+FROM node as server
+WORKDIR /app
+
+COPY ./attend_backend/package.json .
+RUN npm install
+
+COPY ./attend_backend .
+
+EXPOSE 9000
+
+CMD ["npm", "start"]

@@ -1,0 +1,11 @@
+FROM node as client
+WORKDIR /app
+
+COPY ./attend_front/package.json .
+RUN npm install
+
+COPY ./attend_front .
+
+EXPOSE 9000
+
+CMD ["npm", "start"]
