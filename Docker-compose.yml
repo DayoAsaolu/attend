@@ -11,7 +11,7 @@ services:
     # networks:
     #   - local_net
     depends_on:
-      - api
+      - backend
       - db
     ports:
       - "3000:3000"
