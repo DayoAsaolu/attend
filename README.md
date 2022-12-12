@@ -18,3 +18,5 @@ run `docker-compose up --build -d` to rebuild
 ### ports
 1. frontend - http://localhost:3000/
 2. backend - http://localhost:9000/posts 
+
+#### - test jenkins polling
