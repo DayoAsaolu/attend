@@ -20,7 +20,9 @@ pipeline {
     }
 
     stage('Slack Notification'){
-      slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'jenkins-pipeline', color: 'good', message: 'msg: Welcome to jenkins, build was success', teamDomain: 'frequency', tokenCredentialId: 'slack-demo'
+      steps {
+        slackSend baseUrl: 'https://hooks.slack.com/services/', channel: 'jenkins-pipeline', color: 'good', message: 'msg: Welcome to jenkins, build was success', teamDomain: 'frequency', tokenCredentialId: 'slack-demo'
+      }
     }
 
   }
