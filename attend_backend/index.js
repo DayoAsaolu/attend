@@ -21,9 +21,9 @@ app.get('/', (req, res) => {
 })
 
 // process.env.CONNECTION_URL 
-const CONNECTION_URL="mongodb+srv://dayoasaolu:y2kHT0wTaOFshTSC@cluster0.8cktu.mongodb.net/?retryWrites=true&w=majority"
+// const CONNECTION_URL="mongodb+srv://dayoasaolu:y2kHT0wTaOFshTSC@cluster0.8cktu.mongodb.net/?retryWrites=true&w=majority"
 // const CONNECTION_URL="mongodb://admin:wddtWmxCwlR0WUlV@127.0.0.1:27017/"
-// const CONNECTION_URL = "mongodb://admin:wddtWmxCwlR0WUlV@db:27017"
+const CONNECTION_URL = "mongodb://admin:wddtWmxCwlR0WUlV@db:27017"
 
 
 

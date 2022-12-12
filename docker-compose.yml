@@ -12,7 +12,7 @@ services:
     #   - local_net
     depends_on:
       - backend
-      # - db
+      - db
     ports:
       - "3000:3000"
   backend:
@@ -25,22 +25,22 @@ services:
       - ./attend_backend:/app
     # networks:
     #   - local_net
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     ports:
       - "9000:9000"
-  # db:
-  #   container_name: attend_db
-  #   image: mongo
-  #   environment:
-  #     - MONGO_INITDB_ROOT_USERNAME=admin
-  #     - MONGO_INITDB_ROOT_PASSWORD=wddtWmxCwlR0WUlV
-  #     - MONGO_INITDB_DATABASE=testing
-  #   # networks:
-  #   #   - local_net
-  #   ports:
-  #     - "27017:27017"
-  #   restart: always
+  db:
+    container_name: attend_db
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=wddtWmxCwlR0WUlV
+      - MONGO_INITDB_DATABASE=testing
+    # networks:
+    #   - local_net
+    ports:
+      - "27017:27017"
+    restart: always
 # networks:
 #   local_net:
 #     driver: bridge
