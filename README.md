@@ -2,11 +2,9 @@
 
 Full Stack attendance app. The whole app can run locally on docker containers
 
-Tools
-1. Mongodb - Database
-2. Node, Express, React
-3. Docker
-4. Jenkins
+## Technical Diagram
+
+1. `Frontend - Phase1` ![FrontEnd - Phase1](./phase1.jpg)
 
 # How to install and use
 Make sure you have docker and docker-compose installed
